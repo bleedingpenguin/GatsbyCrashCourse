@@ -1,6 +1,7 @@
 import React from 'react'
 import { useStaticQuery, graphql, Link } from "gatsby"
 import Layout from '../components/layout'
+import Menu from '../components/menu'
 
 const Blog = () => {
   const { allMarkdownRemark } = useStaticQuery(
@@ -24,6 +25,7 @@ const Blog = () => {
 
   return (
     <Layout>
+      <Menu />
       <h1>Latest Posts</h1>
       {allMarkdownRemark.edges.map(post => (
         <div key={ post.node.id }>
